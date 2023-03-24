@@ -31,13 +31,14 @@
 // ---------------------------------
 // Key definitions
 #define BUTTON_KEY1 KEY_F13
-#define BUTTON_KEY2 KEY_F14
-#define BUTTON_KEY3 KEY_F15
-#define BUTTON_KEY4 KEY_F16
-#define BUTTON_KEY5 KEY_F17
-#define BUTTON_KEY6 KEY_F18
-#define BUTTON_KEY7 KEY_F19
-#define BUTTON_KEY8 KEY_F20
+// Keys F14 and F15 are being used for brightness control within macOS
+#define BUTTON_KEY2 KEY_F16
+#define BUTTON_KEY3 KEY_F17
+#define BUTTON_KEY4 KEY_F18
+#define BUTTON_KEY5 KEY_F19
+#define BUTTON_KEY6 KEY_F20
+#define BUTTON_KEY7 KEY_F21
+#define BUTTON_KEY8 KEY_F22
 // Pin definitions
 #define BUTTON_PIN1 2
 #define BUTTON_PIN2 3
