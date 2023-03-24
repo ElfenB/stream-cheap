@@ -50,6 +50,18 @@
 #define BUTTON_PIN8 9
 // ---------------------------------
 
+void useOptionKeys(boolean state) {
+  if (state) {
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press(KEY_LEFT_GUI);
+    Keyboard.press(KEY_LEFT_SHIFT);
+  } else {
+    Keyboard.release(KEY_LEFT_CTRL);
+    Keyboard.release(KEY_LEFT_GUI);
+    Keyboard.release(KEY_LEFT_SHIFT);
+  }
+}
+
 // Button helper class for handling press/release and debouncing
 class button {
  public:
@@ -63,7 +75,15 @@ class button {
     }
 
     lastPressed = millis();
-    state ? Keyboard.press(key) : Keyboard.release(key);
+    if (state) {
+      // Use more option keys to get less conflicts with other apps
+      useOptionKeys(true);
+      Keyboard.press(key);
+    } else {
+      Keyboard.release(key);
+      // Release the option keys
+      useOptionKeys(false);
+    }
     pressed = state;
   }
 
